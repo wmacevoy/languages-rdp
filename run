@@ -1,0 +1,2 @@
+#!/bin/bash
+docker build -t rdp . && docker run --rm rdp "$@"

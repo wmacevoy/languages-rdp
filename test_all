@@ -1,0 +1,17 @@
+#!/bin/bash
+
+for t in bin/test_*
+do
+  if ! "$t"
+  then
+      fail="$fail $t"
+  else
+      pass="$pass $t"
+  fi
+done
+echo "passed tests:$pass"
+if [ "$fail" != "" ]
+then
+  echo "failed tests:$fail"
+  exit 1
+fi
